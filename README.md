@@ -2,28 +2,49 @@
 
 Install uv with the standalone installers:
 
-```sh
-# On macOS and Linux.
+```fish
+# On macOS and Linux
 curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
 or
 
 ```pwsh
-# On Windows.
+# On Windows
 powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 ```
 
 Now, create a virtual environment `.venv` using:
 
-```sh
+```fish
 uv venv --python 3.13
 ```
 
 This will either reuse the Python version available on your system or if
-unavailable, download Python for you. Subsequent use of `uv venv` will activate
-the virtual environment. After activation, install the dependencies using:
+unavailable, download Python for you. To activate the `.venv`, run:
 
-```sh
+```fish
+# On macOS and Linux (e.g. fish, modify extension for other shells)
+. .venv/bin/activate.fish
+```
+
+or
+
+```pwsh
+# On Windows (PowerShell)
+. .venv\Scripts\Activate.ps1
+```
+
+After activation, install the dependencies using:
+
+```fish
 uv sync --active
 ```
+
+Now, run the project using:
+
+```fish
+uv run -m src.main
+```
+
+The result(s) will be generated inside `src/solution`.

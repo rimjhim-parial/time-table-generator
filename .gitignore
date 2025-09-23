@@ -5,4 +5,5 @@ __pycache__
 # Files
 .DS_Store
 Thumbs.db
-timetable*.csv
+solution
+*.csv

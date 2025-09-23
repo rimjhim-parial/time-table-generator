@@ -1,6 +1,6 @@
 import itertools
 import polars as pl
-from model import Model
+from .model import Model
 from collections import defaultdict
 
 
